@@ -18,10 +18,23 @@ it('Should have page displaying shortened urls', () => {
   cy.get('section').find('.url').should('have.length', 26)
 })
 
-it('Should have a search bar', () => {
-  cy.get('input')
+it('Should have a search field to enter name', () => {
+  cy.get('.title-input')
+})
+it('Should have a search field to enter the URL', () => {
+  cy.get('.url-to-shorten-input')
 })
 
+it('Should be able to type into the name field', () => {
+  cy.get('.title-input').type('Travis')
+})
+it('Should be able to type into the URL field', () => {
+  cy.get('.url-to-shorten-input').type('travis.awesome')
+})
+
+it('Should have a Shorten Please! button', () => {
+  cy.get('button')
+})
 
 
 })

@@ -36,6 +36,7 @@ const UrlForm = ({updateUrls}) => {
     return (
       <form>
         <input
+        className='title-input'
           type='text'
           placeholder='Title...'
           name='title'
@@ -44,6 +45,7 @@ const UrlForm = ({updateUrls}) => {
         />
 
         <input
+        className='url-to-shorten-input'
           type='text'
           placeholder='URL to Shorten...'
           name='urlToShorten'
