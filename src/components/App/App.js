@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { getUrls } from '../../apiCalls';
+import { getUrls, postUrls } from '../../apiCalls';
 import UrlContainer from '../UrlContainer/UrlContainer';
 import UrlForm from '../UrlForm/UrlForm';
 
@@ -21,8 +21,13 @@ getUrls().then((response) => {
 }, [])
 
 const updateUrls = (newUrl) => {
+  // setUrls([...urls, newUrl])
 console.log('newUrl in App', newUrl)
-// setUrls([...urls, newUrl])
+postUrls(newUrl).then(data => {
+  console.log('Post newUrl from the app', data)
+  console.log('Urls from the app', urls)
+  
+})
 }
 
   console.log('urls above return in App', urls)

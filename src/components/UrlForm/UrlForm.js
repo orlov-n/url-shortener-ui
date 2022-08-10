@@ -21,7 +21,7 @@ const UrlForm = ({updateUrls}) => {
     e.preventDefault();
     // setNewUrl()
     updateUrls({long_url: urlToShorten, title: title})
-    // clearInputs();
+    clearInputs();
   }
 
 
@@ -32,7 +32,7 @@ const UrlForm = ({updateUrls}) => {
     // setState({title: '', urlToShorten: ''});
   }
   
-  // console.log('ABOVE FORM RETURN', 'title', title, 'urlToShorten', urlToShorten, 'newUrl', newUrl)
+  // console.log('ABOVE FORM RETURN', 'title', title, 'urlToShorten', urlToShorten, )
     return (
       <form>
         <input

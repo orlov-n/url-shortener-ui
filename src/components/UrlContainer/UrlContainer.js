@@ -5,8 +5,8 @@ import './UrlContainer.css';
 const UrlContainer = ({urls}) => {
 
 
+  console.log('urls from Container', urls)
   const urlEls = urls.map(url => {
-    console.log('urls from Container', urls)
     return (
       <div key={url.id} className="url">
         <h3>{url.title}</h3>
