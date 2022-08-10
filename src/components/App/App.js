@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { getUrls } from '../../apiCalls';
 import UrlContainer from '../UrlContainer/UrlContainer';
@@ -9,12 +9,15 @@ import UrlForm from '../UrlForm/UrlForm';
 
 const [urls, setUrls] = useState([])
 
-useEffect(() {
+useEffect(() => {
+
+getUrls().then((response) => {
+  console.log('this is response', response)
+  // setUrls(response)
+})
 
   // api call
 })
-
-
   
     return (
       <main className="App">
@@ -23,7 +26,7 @@ useEffect(() {
           <UrlForm />
         </header>
 
-        <UrlContainer urls={this.state.urls}/>
+        <UrlContainer urls={urls}/>
       </main>
     );
   }
