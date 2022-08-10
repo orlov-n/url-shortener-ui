@@ -15,7 +15,7 @@ describe('List of urls', () => {
 });
 
 it('Should have page displaying shortened urls', () => {
-  cy.get('section').find('.url').should('have.length', 26)
+  cy.get('section').find('.url').should('have.length', 29)
 })
 
 it('Should have a search field to enter name', () => {
@@ -35,6 +35,14 @@ it('Should be able to type into the URL field', () => {
 it('Should have a Shorten Please! button', () => {
   cy.get('button')
 })
+
+it('Should be able to click on a submit button and be redirected to returned results page', (() => {
+  cy.get('title-input').type('Travis')
+  cy.get('.url-to-shorten-input').type('travis.awesome')
+  cy.get('button').click();
+  cy.url().should('eq ');
+}));
+  
 
 
 })
