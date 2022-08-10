@@ -13,11 +13,11 @@ useEffect(() => {
 
 getUrls().then((response) => {
   console.log('this is response', response)
-  // setUrls(response)
+  setUrls(response)
 })
 
   // api call
-})
+}, [])
   
     return (
       <main className="App">
