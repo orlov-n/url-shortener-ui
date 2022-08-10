@@ -7,22 +7,27 @@ const UrlForm = () => {
   const [urlToShorten, setUrlToShorten] = useState([])
   const [newUrl, setNewUrl] = useState({})
 
-  const handleNameChange = e => {
-    e.target.name === 'titile' && setTitle(e.target.value)
+  const handleChange = e => {
+    e.target.name === 'title' && setTitle(e.target.value)
+    console.log('title value in handleChange', e.target.value )
+
     e.target.name === 'urlToShorten' && setUrlToShorten(e.target.value)
+    console.log('urlToShorten value in handleChange', e.target.value )
     // this.setState({ [e.target.name]: e.target.value });
 
   }
 
-  handleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
-    this.clearInputs();
+    setNewUrl({long_url: urlToShorten, title: title})
+
+    // clearInputs();
   }
 
   // clearInputs = () => {
   //   this.setState({title: '', urlToShorten: ''});
   // }
-
+  console.log('title', title, 'urlToShorten', urlToShorten, 'newUrl', newUrl)
     return (
       <form>
         <input
@@ -30,7 +35,7 @@ const UrlForm = () => {
           placeholder='Title...'
           name='title'
           // value={title}
-          onChange={e => handleNameChange(e)}
+          onChange={e => handleChange(e)}
         />
 
         <input
@@ -38,12 +43,12 @@ const UrlForm = () => {
           placeholder='URL to Shorten...'
           name='urlToShorten'
           // value={urlToShorten}
-          onChange={e => handleNameChange(e)}
+          onChange={e => handleChange(e)}
         />
 
         <button onClick={e => handleSubmit(e)}>
           Shorten Please!
-        </button>
+        </button> 
       </form>
     )
   }
