@@ -6,8 +6,9 @@ const UrlContainer = ({urls}) => {
 
 
   const urlEls = urls.map(url => {
+    console.log('urls from Container', urls)
     return (
-      <div className="url">
+      <div key={url.id} className="url">
         <h3>{url.title}</h3>
         <a href={url.short_url} target="blank">{url.short_url}</a>
         <p>{url.long_url}</p>

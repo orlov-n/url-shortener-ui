@@ -13,17 +13,24 @@ useEffect(() => {
 
 getUrls().then((response) => {
   console.log('this is response', response)
-  // setUrls(response)
+  setUrls(response.urls)
+  // updateUrls()
 })
 
   // api call
 }, [])
-  
+
+const updateUrls = (newUrl) => {
+console.log('newUrl in App', newUrl)
+// setUrls([...urls, newUrl])
+}
+
+  console.log('urls above return in App', urls)
     return (
       <main className="App">
         <header>
           <h1>URL Shortener</h1>
-          <UrlForm />
+          <UrlForm updateUrls={updateUrls}/>
         </header>
 
         <UrlContainer urls={urls}/>
