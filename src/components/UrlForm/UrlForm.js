@@ -5,15 +5,19 @@ const UrlForm = () => {
  
   const [title, setTitle] = useState('')
   const [urlToShorten, setUrlToShorten] = useState([])
+  const [newUrl, setNewUrl] = useState({})
 
-  handleNameChange = e => {
+  const handleNameChange = e => {
+    e.target.name === 'titile' && setTitle(e.target.value)
+    e.target.name === 'urlToShorten' && setUrlToShorten(e.target.value)
     // this.setState({ [e.target.name]: e.target.value });
+
   }
 
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   this.clearInputs();
-  // }
+  handleSubmit = e => {
+    e.preventDefault();
+    this.clearInputs();
+  }
 
   // clearInputs = () => {
   //   this.setState({title: '', urlToShorten: ''});
@@ -25,16 +29,16 @@ const UrlForm = () => {
           type='text'
           placeholder='Title...'
           name='title'
-          value={title}
+          // value={title}
           onChange={e => handleNameChange(e)}
         />
 
         <input
           type='text'
           placeholder='URL to Shorten...'
-          name='title'
-          value={urlToShorten}
-          // onChange={e => handleNameChange(e)}
+          name='urlToShorten'
+          // value={urlToShorten}
+          onChange={e => handleNameChange(e)}
         />
 
         <button onClick={e => handleSubmit(e)}>
