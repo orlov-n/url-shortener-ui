@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import './App.css';
 import { getUrls } from '../../apiCalls';
 import UrlContainer from '../UrlContainer/UrlContainer';
 import UrlForm from '../UrlForm/UrlForm';
 
-export class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      urls: []
-    }
-  }
 
-  componentDidMount() {
-  }
+ const App = () => {
 
-  render() {
+const [urls, setUrls] = useState([])
+
+useEffect(() {
+
+  // api call
+})
+
+
+  
     return (
       <main className="App">
         <header>
@@ -27,6 +27,6 @@ export class App extends Component {
       </main>
     );
   }
-}
+
 
 export default App;
