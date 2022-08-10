@@ -11,11 +11,7 @@ const [urls, setUrls] = useState([])
 
 useEffect(() => {
 
-getUrls().then((response) => {
-  console.log('this is response', response)
-  setUrls(response.urls)
-  // updateUrls()
-})
+  fetchUrls()
 
   // api call
 }, [])
@@ -26,8 +22,17 @@ console.log('newUrl in App', newUrl)
 postUrls(newUrl).then(data => {
   console.log('Post newUrl from the app', data)
   console.log('Urls from the app', urls)
+  fetchUrls()
   
 })
+}
+
+const fetchUrls = () => {
+  getUrls().then((response) => {
+    console.log('this is response', response)
+    setUrls(response.urls)
+    // updateUrls()
+  })
 }
 
   console.log('urls above return in App', urls)
